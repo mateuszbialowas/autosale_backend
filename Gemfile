@@ -56,3 +56,7 @@ group :development do
   gem "web-console"
 end
 gem "avo", ">= 3.2"
+
+gem "devise", "~> 4.9"
+
+gem "ransack", "~> 4.3"
