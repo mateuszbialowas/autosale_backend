@@ -17,7 +17,7 @@ class Avo::Resources::Car < Avo::BaseResource
     field :number_of_seats, as: :number
     field :interior_color, as: :text
     field :material, as: :text
-    field :equipment, as: :code
+    field :equipment, as: :tags
     field :price, as: :number
     field :description, as: :textarea
     field :status, as: :select, hide_on: [:show, :index], enum: Car.statuses.keys, placeholder: 'Choose the status.', filterable: true
