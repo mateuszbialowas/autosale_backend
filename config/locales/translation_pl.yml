@@ -51,5 +51,9 @@ pl:
         power: Moc  #g
         price: Cena  #g
         status: Status  #g
+        statuses:
+          available: Dostępny
+          reserved: Zarezerwowany
+          sold: Sprzedany
         title: Tytuł  #g
         year: Rok  #g

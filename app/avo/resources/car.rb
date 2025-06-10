@@ -15,11 +15,11 @@ class Avo::Resources::Car < Avo::BaseResource
 
     field :fuel_type, as: :text, name: "Rodzaj paliwa", hide_on: [:index]
 
-    field :mileage, as: :number, name: "Przebieg", format_using: -> { "#{value} km" if value }
+    field :mileage, as: :number, name: "Przebieg"
 
     field :engine, as: :text, name: "Silnik", hide_on: [:index]
 
-    field :power, as: :number, name: "Moc", format_using: -> { "#{value} KM" if value }, hide_on: [:index]
+    field :power, as: :number, name: "Moc", hide_on: [:index]
 
     field :number_of_seats, as: :number, name: "Liczba miejsc", hide_on: [:index]
 
@@ -29,24 +29,26 @@ class Avo::Resources::Car < Avo::BaseResource
 
     field :equipment, as: :tags, name: "Wyposażenie", hide_on: [:index]
 
-    field :price, as: :number, name: "Cena", format_using: -> { "#{value} zł" if value }
+    field :price, as: :number, name: "Cena"
 
     field :description, as: :textarea, name: "Opis", hide_on: [:index]
 
     field :status, as: :select,
           name: "Status",
           hide_on: [:show, :index],
-          enum: Car.statuses.keys,
-          placeholder: 'Wybierz status',
+          enum: Car.statuses.keys.map { |key| [I18n.t("activerecord.attributes.car.statuses.#{key}"), key] },
+
+    placeholder: 'Wybierz status',
           filterable: true
 
     field :status, as: :badge,
           name: "Status",
           options: {
-            info: :available,
-            success: :sold,
-            warning: :reserved
-          }
+            info: :Dostępny,
+            success: :Sprzedany,
+            warning: :Zarezerwowany
+          },
+          format_using: -> { I18n.t("activerecord.attributes.car.statuses.#{value}") if value }
 
     field :images, as: :files,
           name: "Zdjęcia",
