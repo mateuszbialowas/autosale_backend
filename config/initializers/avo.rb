@@ -112,7 +112,7 @@ Avo.configure do |config|
   # config.view_component_path = "app/components"
   # config.display_license_request_timeout_error = true
   # config.disabled_features = []
-  # config.buttons_on_form_footers = true
+  config.buttons_on_form_footers = true
   # config.field_wrapper_layout = true
   # config.resource_parent_controller = "Avo::ResourcesController"
   # config.first_sorting_option = :desc # :desc or :asc

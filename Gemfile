@@ -60,3 +60,5 @@ gem "avo", ">= 3.2"
 gem "devise", "~> 4.9"
 
 gem "ransack", "~> 4.3"
+
+gem "image_processing", "~> 1.14"

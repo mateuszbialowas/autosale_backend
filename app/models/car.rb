@@ -1,4 +1,6 @@
 class Car < ApplicationRecord
+  has_many_attached :images
+
   def self.ransackable_attributes(auth_object = nil)
     %w(title search)
   end

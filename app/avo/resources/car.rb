@@ -1,9 +1,11 @@
 class Avo::Resources::Car < Avo::BaseResource
-  # self.includes = []
-  # self.attachments = []
+  self.includes = [images_attachments: :blob]
+  self.attachments = [:images]
   self.search = {
     query: -> { query.ransack(title_cont: params[:q]).result(distinct: false) }
   }
+  self.default_sort_column = :title
+  self.default_sort_direction = :asc
 
   def fields
     field :id, as: :id
@@ -20,5 +22,6 @@ class Avo::Resources::Car < Avo::BaseResource
     field :price, as: :number
     field :description, as: :textarea
     field :status, as: :text
+    field :images, as: :files, is_image: true, accept: 'image/*'
   end
 end
