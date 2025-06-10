@@ -20,6 +20,7 @@ Bundler.require(*Rails.groups)
 
 module AutosaleBackend
   class Application < Rails::Application
+    config.i18n.default_locale = :pl
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 8.0
 

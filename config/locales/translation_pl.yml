@@ -1,0 +1,55 @@
+pl:
+  activerecord:
+    models:
+      active_storage/attachment: Aktywne przechowywanie/załącznik  #g
+      active_storage/blob: Aktywne przechowywanie/kropelka  #g
+      active_storage/variant_record: Aktywny rekord pamięci/wariantu  #g
+      admin: Admin  #g
+      car: Samochód  #g
+
+    attributes:
+      active_storage/attachment:
+        blob: :activerecord.models.blob  #g
+        name: Nazwa  #g
+        record: :activerecord.models.record  #g
+        record_type: Typ rekordu  #g
+
+      active_storage/blob:
+        attachments: Załączniki  #g
+        byte_size: Rozmiar bajt  #g
+        checksum: Suma kontrolna  #g
+        content_type: Typ treści  #g
+        filename: Nazwa pliku  #g
+        key: Klawisz  #g
+        metadata: Metadane  #g
+        preview_image_attachment: :activerecord.models.preview_image_attachment  #g
+        preview_image_blob: :activerecord.models.preview_image_blob  #g
+        service_name: Nazwa usługi  #g
+        variant_records: Wariant Records  #g
+
+      active_storage/variant_record:
+        blob: :activerecord.models.blob  #g
+        image_attachment: :activerecord.models.image_attachment  #g
+        image_blob: :activerecord.models.image_blob  #g
+        variation_digest: Trawienie wariacji  #g
+
+      admin:
+        email: E-mail  #g
+        encrypted_password: Zaszyfrowane hasło  #g
+
+      car:
+        description: Opis  #g
+        engine: Silnik  #g
+        equipment: Sprzęt  #g
+        fuel_type: Typ paliwa  #g
+        images_attachments: Załączniki obrazów  #g
+        images_blobs: Obrazy Blobs  #g
+        interior_color: Kolor wnętrza  #g
+        material: Tworzywo  #g
+        mileage: Przebieg  #g
+        number_of_seats: Liczba miejsc  #g
+        power: Moc  #g
+        price: Cena  #g
+        status: Status  #g
+        title: Tytuł  #g
+        year: Rok  #g
