@@ -1,6 +1,5 @@
 class Avo::Resources::Car < Avo::BaseResource
   self.includes = [images_attachments: :blob]
-  self.attachments = [:images]
   self.search = {
     query: -> { query.ransack(title_cont: params[:q]).result(distinct: false) }
   }
@@ -21,7 +20,8 @@ class Avo::Resources::Car < Avo::BaseResource
     field :equipment, as: :code
     field :price, as: :number
     field :description, as: :textarea
-    field :status, as: :text
+    field :status, as: :select, hide_on: [:show, :index], enum: Car.statuses.keys, placeholder: 'Choose the status.', filterable: true
+    field :status, as: :badge, options: { info: :available, success: :sold, warning: :reserved }
     field :images, as: :files, is_image: true, accept: 'image/*'
   end
 end
