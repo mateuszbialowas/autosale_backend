@@ -9,7 +9,7 @@ image: mateuszbialowas/autosale_backend
 # Deploy to these servers.
 servers:
   web:
-    - 116.203.100.28
+    - admin.mmoutlet24.pl
   # job:
   #   hosts:
   #     - 192.168.0.1
@@ -19,9 +19,9 @@ servers:
 # Remove this section when using multiple web servers and ensure you terminate SSL at your load balancer.
 #
 # Note: If using Cloudflare, set encryption mode in SSL/TLS setting to "Full" to enable CF-to-app encryption.
-#proxy:
-#  ssl: true
-#  host: app.example.com
+proxy:
+  ssl: true
+  host: admin.mmoutlet24.pl
 
 # Credentials for your image host.
 registry:
@@ -97,7 +97,7 @@ builder:
 accessories:
   db:
     image: postgres:16
-    host: 116.203.100.28
+    host: admin.mmoutlet24.pl
     # For Kamal, consider removing port to keep it private
     # port: "127.0.0.1:5432:5432"
     env:
