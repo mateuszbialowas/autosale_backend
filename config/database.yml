@@ -84,10 +84,10 @@ production:
     database: autosale_backend_production
     username: autosale_backend
     password: <%= ENV["POSTGRES_PASSWORD"] %>
-  cache:
-    <<: *primary_production
-    database: autosale_backend_production_cache
-    migrations_paths: db/cache_migrate
+#  cache:
+#    <<: *primary_production
+#    database: autosale_backend_production_cache
+#    migrations_paths: db/cache_migrate
 #  queue:
 #    <<: *primary_production
 #    database: autosale_backend_production_queue
