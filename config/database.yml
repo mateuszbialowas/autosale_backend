@@ -74,6 +74,11 @@ test:
 #
 production:
  url: <%= ENV["DATABASE_URL"] %>
+ database: autosale_backend_production
+ username: autosale_backend
+ password: dummy_password_for_build
+ host: localhost
+
 #
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
