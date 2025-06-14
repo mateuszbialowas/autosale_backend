@@ -73,12 +73,15 @@ test:
 # URL environment variable explicitly:
 #
 production:
- url: <%= ENV["DATABASE_URL"] %>
- database: autosale_backend_production
- username: autosale_backend
- password: dummy_password_for_build
- host: localhost
-
+  <% if ENV["DATABASE_URL"].present? %>
+  url: <%= ENV["DATABASE_URL"] %>
+  <% else %>
+  <<: *default
+  database: autosale_backend_production
+  username: autosale_backend
+  password: dummy_password_for_build
+  host: localhost
+  <% end %>
 #
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
