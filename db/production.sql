@@ -1,0 +1,1 @@
+CREATE DATABASE autosale_backend_production;
