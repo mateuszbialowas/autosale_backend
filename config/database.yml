@@ -84,7 +84,7 @@ production:
     database: autosale_backend_production
     username: autosale_backend
     password: <%= ENV["POSTGRES_PASSWORD"] %>
-    host: <%= ENV["DB_HOST"] %>
+#    host: admin.mmoutlet24.pl
   cache:
     <<: *primary_production
     database: autosale_backend_production_cache
