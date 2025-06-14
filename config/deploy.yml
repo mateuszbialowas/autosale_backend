@@ -97,7 +97,7 @@ builder:
 accessories:
   db:
     image: postgres:16
-    host: 192.168.0.2
+    host: 192.168.0.1
     # For Kamal, consider removing port to keep it private
     # port: "127.0.0.1:5432:5432"
     env:
@@ -105,7 +105,7 @@ accessories:
         POSTGRES_USER: "autosale_backend"
         POSTGRES_DB: "autosale_backend_production"
       secret:
-        - POSTGRES_PASSWORD
+        - AUTOSALE_BACKEND_DATABASE_PASSWORD
     files:
       - db/production.sql:/docker-entrypoint-initdb.d/setup.sql
     directories:
