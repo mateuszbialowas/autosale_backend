@@ -86,8 +86,6 @@ accessories:
    image: postgres:16-alpine
    host: 116.203.100.28
    port: 5432
-   options:
-     restart: always
    env:
      clear:
        POSTGRES_USER: postgres
