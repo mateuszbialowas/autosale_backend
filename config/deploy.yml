@@ -82,10 +82,9 @@ builder:
 
 # Use accessory services (secrets come from .kamal/secrets).
 accessories:
- db:
+ postgres:
    image: postgres:16-alpine
    host: 116.203.100.28
-   # Change to 3306 to expose port to the world instead of just local network.
    port: 5432
    options:
      restart: always
